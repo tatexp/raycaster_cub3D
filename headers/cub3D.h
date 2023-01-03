@@ -7,5 +7,6 @@
 
 # include "libft.h"
 # include "errors.h"
+# include "parse.h"
 
 #endif
