@@ -1,7 +1,7 @@
 NAME = cub3D
 
 CC = gcc
-FLAGS = #-Wall -Werror -Wextra
+FLAGS = -g -Wall -Werror -Wextra
 
 #LIBPATH = ../mlx
 HEADERS = ./headers
@@ -15,16 +15,19 @@ ERRORS_SRC = error_usage.c		error_message_print.c
 LIBFT_DIR = libft/
 LIBFT_SRC = ft_putchar_fd.c		ft_putstr_fd.c		ft_strchr.c\
 	ft_strlen.c		ft_strdup.c		ft_strcpy.c		ft_strjoin.c\
-	ft_strncmp.c 	ft_isdigit.c\
+	ft_strncmp.c 	ft_isdigit.c	ft_substr.c		ft_iswhitespace.c\
+	ft_atoi.c\
+	ft_lstnew.c		ft_lstadd_back.c\
 	get_next_line.c
 
 PARSE_DIR = parse/
-PARSE_SRC = map_file_parse.c	map_file_read.c		strings_parse.c\
-	param_int_parse.c\
+PARSE_SRC = map_file_parse.c	map_file_read.c		map_settings_parse.c\
+	param_int_parse.c	param_str_parse.c		player_parse.c\
 	cub_atoi.c
 
 UTILS_DIR = utils/
-UTILS_SRC = whitespaces_skip.c	init_variables.c
+UTILS_SRC = whitespaces_skip.c	init_variables.c	end_of_line_check.c\
+	segment_len.c
 
 #добавить сюда новые подпапки
 SRCS = $(SRC)\

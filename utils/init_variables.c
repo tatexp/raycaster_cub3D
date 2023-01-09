@@ -21,8 +21,34 @@ void	init_colors(t_cub *v)
 	v->ceiling.b = -1;
 }
 
+void	init_textures(t_cub *v)
+{
+	v->texture_north = NULL;
+	v->texture_south = NULL;
+	v->texture_east = NULL;
+	v->texture_west = NULL;
+	v->texture_sprite = NULL;
+}
+
+void	init_maze(t_cub *v)
+{
+	v->maze.maze_lst = NULL;
+	v->maze.h = 0;
+	v->maze.w = 0;
+}
+
+void	init_player(t_cub *v)
+{
+	v->player.x = 0.0;
+	v->player.y = 0.0;
+	v->player.dir = 0.0;
+}
+
 void	init_variables(t_cub *v)
 {
 	init_colors(v);
 	init_screen(v);
+	init_textures(v);
+	init_maze(v);
+	init_player(v);
 }

@@ -9,6 +9,7 @@ int		param_int_parse(char *line, t_cub *v, char *param_name)
 	delim = -1;
 	counter = 0;
 	result = 0;
+	line += whitespaces_skip(line);
 	if (ft_strncmp(param_name, "RES", 3) == 0)
 	{
 		result = cub_atoi(line + counter, &v->screen.w, &delim, 0);
@@ -44,19 +45,19 @@ int		param_int_parse(char *line, t_cub *v, char *param_name)
 	{
 		v->ceiling.t = 0;
 
-		result = cub_atoi(line + counter, &v->ceiling.r, &delim, 0); //set floors's red color
+		result = cub_atoi(line + counter, &v->ceiling.r, &delim, 0); //set ceiling's red color
 		if (result == -1)
 			return (-1);
 		else
 			counter += result;
 
-		result = cub_atoi(line + counter, &v->ceiling.g, &delim, 0); //set floors's green color
+		result = cub_atoi(line + counter, &v->ceiling.g, &delim, 0); //set ceiling's green color
 		if (result == -1)
 			return (-1);
 		else
 			counter += result;
 
-		result = cub_atoi(line + counter, &v->ceiling.b, &delim, 1); //set floors's blue color
+		result = cub_atoi(line + counter, &v->ceiling.b, &delim, 1); //set ceiling's blue color
 		if (result == -1)
 			return (-1);
 	}

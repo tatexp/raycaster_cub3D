@@ -29,12 +29,11 @@ int		cub_atoi(char *str, int *param, int *delim, int is_last)
 		*delim = delim_set(str[counter]);
 	if (str[counter] && *delim == str[counter])
 		++counter;
+	// printf("debug 1 cub_atoi\n");
 	if (is_last)
-	{
-		counter += whitespaces_skip(str);
-		if (str[counter])
+		if (end_of_line_check(str + counter) == -1)
 			return (-1);
-	}
+	// printf("debug 2 cub_atoi\n");
 	*param = (int)result;
 	return (counter);
 }
