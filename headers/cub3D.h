@@ -8,5 +8,6 @@
 # include "libft.h"
 # include "errors.h"
 # include "parse.h"
+# include "draw.h"
 
 #endif

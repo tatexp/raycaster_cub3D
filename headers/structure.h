@@ -1,5 +1,6 @@
 #ifndef STRUCTURE_H
 # define STRUCTURE_H
+# include <math.h>
 
 typedef struct		s_list
 {
@@ -36,6 +37,44 @@ typedef struct s_player
 	double	dir;	//direction
 }				t_player;
 
+
+typedef struct	s_img {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_img;
+
+typedef struct	s_ray
+{
+	float	cam_x;
+	float	fov;
+	float	x;
+	float	y;
+	int		map_x;
+	int		map_y;
+	float	side_x;
+	float	side_y;
+	float	delta_x;
+	float	delta_y;
+	// float	wall_dist;
+	// float	wall_h;
+	// float	wall_start;
+	// float	wall_fnsh;
+	int		step_x;
+	int		step_y;
+	int		hit;
+	int		side;
+	// float	wall_x;
+	// int		tex_x;
+	// float	tex_step;
+	// float	tex_pos;
+	// int		sp_side;
+	// float	sp_width;
+	// int		sp_count;
+}				t_ray;
+
 //main structure for all variables
 typedef struct s_cub
 {
@@ -50,7 +89,9 @@ typedef struct s_cub
 	char		*texture_east;
 	char		*texture_west;
 	char		*texture_sprite;
-	
+	void		*mlx;
+	void		*mlx_win;
+	t_img		img;
 }				t_cub;
 
 
